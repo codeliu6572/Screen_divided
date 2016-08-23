@@ -43,18 +43,18 @@
     [_topLayer addAnimation:topAnimation forKey:@"topAnimation"];
     
     //创建一个CABasicAnimation作用于CALayer的anchorPoint
-    CABasicAnimation *bottomAnimation = [CABasicAnimation animationWithKeyPath:@"anchorPoint"];
+    CABasicAnimation *downAnimation = [CABasicAnimation animationWithKeyPath:@"anchorPoint"];
     //设置移动路径
-    bottomAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(0, 0)];
+    downAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(0, 0)];
     //动画时间
-    bottomAnimation.duration = 1.5;
+    downAnimation.duration = 1.5;
     //设置动画速度为匀速
-    bottomAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    downAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     //设置动画结束后不移除
-    bottomAnimation.removedOnCompletion = NO;
+    downAnimation.removedOnCompletion = NO;
     //动画结束后保持结束状态
-    bottomAnimation.fillMode = kCAFillModeForwards;
-    [_downLayer addAnimation:bottomAnimation forKey:@"downAnimation"];
+    downAnimation.fillMode = kCAFillModeForwards;
+    [_downLayer addAnimation:downAnimation forKey:@"downAnimation"];
 
 }
 
@@ -83,17 +83,17 @@
 - (void)drawDownShapeLayer
 {
     //绘制贝赛尔曲线
-    UIBezierPath *bottomBezier = [[UIBezierPath alloc]init];
-    [bottomBezier moveToPoint:CGPointMake(self.bounds.size.width, 0)];
-    [bottomBezier addCurveToPoint:CGPointMake(self.bounds.size.width/2.0, self.bounds.size.height/2.0) controlPoint1:CGPointMake(self.bounds.size.width, 0) controlPoint2:CGPointMake(self.bounds.size.width/3*2+70, self.bounds.size.height/3+70)];
-    [bottomBezier addCurveToPoint:CGPointMake(0, self.bounds.size.height) controlPoint1:CGPointMake(self.bounds.size.width/3-70, self.bounds.size.height/3*2-70) controlPoint2:CGPointMake(0, self.bounds.size.height)];
-    [bottomBezier addLineToPoint:CGPointMake(self.bounds.size.width, self.bounds.size.height)];
+    UIBezierPath *downBezier = [[UIBezierPath alloc]init];
+    [downBezier moveToPoint:CGPointMake(self.bounds.size.width, 0)];
+    [downBezier addCurveToPoint:CGPointMake(self.bounds.size.width/2.0, self.bounds.size.height/2.0) controlPoint1:CGPointMake(self.bounds.size.width, 0) controlPoint2:CGPointMake(self.bounds.size.width/3*2+70, self.bounds.size.height/3+70)];
+    [downBezier addCurveToPoint:CGPointMake(0, self.bounds.size.height) controlPoint1:CGPointMake(self.bounds.size.width/3-70, self.bounds.size.height/3*2-70) controlPoint2:CGPointMake(0, self.bounds.size.height)];
+    [downBezier addLineToPoint:CGPointMake(self.bounds.size.width, self.bounds.size.height)];
 
-    [bottomBezier addLineToPoint:CGPointMake(self.bounds.size.width, 0)];
-    [bottomBezier closePath];
+    [downBezier addLineToPoint:CGPointMake(self.bounds.size.width, 0)];
+    [downBezier closePath];
     //创建一个CAShapeLayer，得到贝赛尔曲线的路径
     CAShapeLayer *downShape = [CAShapeLayer layer];
-    downShape.path = bottomBezier.CGPath;
+    downShape.path = downBezier.CGPath;
     //给_downLayer设置contents图
     _downLayer.contents = (__bridge id _Nullable)(_screenImage.CGImage);
     _downLayer.frame = self.frame;
