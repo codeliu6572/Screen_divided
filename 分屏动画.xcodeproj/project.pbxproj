@@ -221,6 +221,7 @@
 				TargetAttributes = {
 					68B702141D6AE4AE00CA67BF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = B2P95ADDC5;
 					};
 					68B7022D1D6AE4AE00CA67BF = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -431,10 +432,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "分屏动画/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Codeliu.Fire.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -442,10 +446,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "分屏动画/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Codeliu.Fire.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -514,6 +521,7 @@
 				68B702441D6AE4AE00CA67BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68B702451D6AE4AE00CA67BF /* Build configuration list for PBXNativeTarget "分屏动画Tests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +530,7 @@
 				68B702471D6AE4AE00CA67BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68B702481D6AE4AE00CA67BF /* Build configuration list for PBXNativeTarget "分屏动画UITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +539,7 @@
 				68B7024A1D6AE4AE00CA67BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

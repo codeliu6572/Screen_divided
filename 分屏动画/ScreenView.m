@@ -31,7 +31,7 @@
     //设置移动路径
     topAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
     //动画时间
-    topAnimation.duration = 1.5;
+    topAnimation.duration = 3;
     //设置代理，方便完成动画后移除当前view
     topAnimation.delegate = self;
     //设置动画速度为匀速
@@ -47,7 +47,7 @@
     //设置移动路径
     downAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(0, 0)];
     //动画时间
-    downAnimation.duration = 1.5;
+    downAnimation.duration = 3;
     //设置动画速度为匀速
     downAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     //设置动画结束后不移除

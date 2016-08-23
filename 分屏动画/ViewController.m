@@ -21,8 +21,11 @@
     ScreenView *screenView = [[ScreenView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) screenImage:[UIImage imageNamed:@"750-1334.png"]];
     [self.view addSubview:screenView];
  
-
-    [screenView screenAnimation];
+    sleep(1);
+    //延时0.5s后执行
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [screenView screenAnimation];
+    });
 
     
 
